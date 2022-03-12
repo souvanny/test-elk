@@ -1,0 +1,35 @@
+filebeat.inputs:
+  - type: log
+    paths:
+      - /var/log/symfony/dev.log
+
+output.logstash:
+  hosts: ["logstash_cont:5044"]
+  index: "logs-symfony"
+
+#setup.ilm.enabled: false
+#setup.template.overwrite: true
+#setup.template.name: "symfony-loggitos"
+#setup.template.pattern: "symfony-loggitos-*"
+#
+#output.elasticsearch:
+#  hosts: ["elasticsearch:9200"]
+#  index: "logs-symfony"
+##  #username: "filebeat_internal"
+##  #password: "YOUR_PASSWORD"
+
+
+#filebeat.inputs:
+#  - type: container
+#    enabled: true
+#    paths:
+#      - '/var/log/containers/*.log'
+#    stream: all # can be all, stdout or stderr
+#
+
+#filebeat.inputs:
+#  - type: container
+#    enabled: true
+#    paths:
+#      - '/var/lib/docker/containers/*/*.log'
+#    stream: all # can be all, stdout or stderr
