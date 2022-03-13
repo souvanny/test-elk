@@ -12,15 +12,15 @@ monolog:
             channels: ["!event", "!doctrine", "!console"]
 
         #store all logs in a local file (buffered for better performance)
-#        buffered_file:
-#            type: buffer
-#            handler: file_log
-#            level: info
+        buffered_file:
+            type: buffer
+            handler: file_log
+            level: info
 
-#        file_log:
-#            type: stream
-#            path: "%kernel.logs_dir%/%kernel.environment%.log"
-#            #formatter: Monolog\Formatter\LogstashFormatter
+        file_log:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            #formatter: Monolog\Formatter\LogstashFormatter
 
 
 #        #store logs in elastic search directly just for info level and above

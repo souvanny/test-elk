@@ -1,0 +1,7 @@
+CMD
+
+docker exec -ti filebeats_cont bash
+docker logs -f filebeats_cont
+
+
+/var/lib/docker/containers/:/var/log/container/

@@ -1,7 +1,7 @@
-#filebeat.inputs:
-#  - type: log
-#    paths:
-#      - /var/log/symfony/dev.log
+filebeat.inputs:
+  - type: log
+    paths:
+      - /var/log/symfony/dev.log
 
 output.logstash:
   hosts: ["logstash_cont:5044"]
@@ -27,18 +27,9 @@ output.logstash:
 #    stream: all # can be all, stdout or stderr
 #
 
-filebeat.inputs:
-  - type: container
-    enabled: true
-    paths:
+#filebeat.inputs:
+#  - type: container
+#    enabled: true
+#    paths:
 #      - '/var/lib/docker/containers/*/*.log'
-      - '/var/log/container/*/*.log'
-    stream: all # can be all, stdout or stderr
-
-logging.level: debug
-logging.to_files: true
-logging.files:
-  path: /tmp/filebeat
-  name: filebeat
-  keepfiles: 7
-  permissions: 0640
+#    stream: all # can be all, stdout or stderr
